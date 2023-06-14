@@ -18,9 +18,9 @@ label_path = sys.argv[3]
 if len(sys.argv) >= 5:
     cap = cv2.VideoCapture(sys.argv[4])  # capture from file
 else:
-    cap = cv2.VideoCapture(0)   # capture from camera
-    cap.set(3, 1920)
-    cap.set(4, 1080)
+    cap = cv2.VideoCapture(1,cv2.CAP_DSHOW)   # capture from camera
+    #cap.set(3, 1920)
+    #cap.set(4, 1080)
 
 class_names = [name.strip() for name in open(label_path).readlines()]
 num_classes = len(class_names)
